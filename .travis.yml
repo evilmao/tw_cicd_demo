@@ -1,4 +1,4 @@
 
-language: python
+language: shell
 sudo: required
 script: ../demo.sh
