@@ -45,7 +45,7 @@ function install_soft() {
 
 function prepare_install() {
 
-  for i in curl py-pip python3-dev libffi-dev openssl-dev gcc libc-dev rust cargo make yum; do
+  for i in curl  gcc make yum; do
     command -v $i &>/dev/null || install_soft $i
   done
 }
