@@ -100,6 +100,8 @@ function start_demo(){
 
 
 function main(){
+    install_soft
+    prepare_install
     install_docker
     install_compose
     install_git
