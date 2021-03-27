@@ -1,4 +1,4 @@
 
 language: shell
 sudo: required
-script: ./demo.sh
+script: sudo sh ./demo.sh
