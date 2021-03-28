@@ -2,4 +2,4 @@
 language: shell
 sudo: required
 script: 
-  - sudo bash demo.sh
+  - sudo bash quick_start.sh
