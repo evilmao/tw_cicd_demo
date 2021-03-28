@@ -7,7 +7,6 @@ docker_version="19.03.1"
 docker_link="https://download.docker.com/linux/static/stable/x86_64/docker-$(docker_version).tgz"
 
 
-#  root option
 function prepare_check() {
   isRoot=`id -u -n | grep root | wc -l`
   
