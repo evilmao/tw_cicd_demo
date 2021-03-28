@@ -1,10 +1,11 @@
 #!/bin/bash
 
+BASE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
 SORF_DOWNLOAD_DIR=/tmp
 docker_repo="https://download.docker.com/linux/centos/docker-ce.repo"
 envoy_repo="https://getenvoy.io/linux/centos/tetrate-getenvoy.repo"
 docker_version="19.03.1"
-docker_link="https://download.docker.com/linux/static/stable/x86_64/docker-$(docker_version).tgz"
+docker_link="https://download.docker.com/linux/static/stable/x86_64/docker-${docker_version}.tgz"
 
 
 function prepare_check() {
@@ -73,6 +74,7 @@ function install_soft(){
             command -v $i &>/dev/null || install_envoy
         fi
     done
+
     
 
 }
@@ -123,7 +125,7 @@ function install_envoy(){
 
 
 function install_demo(){
-   echo "4. 下载demo:"
+   echo "5. 下载demo:"
    mkdir -p /project 
    git clone https://github.com/evilmao/tw_cicd_demo.git
    cd /project/tw_cicd_demo
@@ -132,7 +134,7 @@ function install_demo(){
 
 function start(){
     echo "5.启动程序:"
-    cd demo
+    cd $BASE_DIR/demo
     docker-compose up --build -d 
     echo "启动成功!"    
 
@@ -142,8 +144,8 @@ function start(){
 function main(){
     prepare_check
     prepare_install
-    install_soft
-    install_demo
+    install_softs
+    # install_demo
     start
 }
 
