@@ -144,7 +144,7 @@ function start(){
 function main(){
     prepare_check
     prepare_install
-    install_softs
+    install_soft
     # install_demo
     start
 }
