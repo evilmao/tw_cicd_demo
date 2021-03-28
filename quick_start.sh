@@ -36,7 +36,8 @@ function install_choice() {
        if [ "$1" == "git" ]; then
          dnf -q -y install git-all 
       else
-        apt-get -qqy install $1
+         apt-get -qqy install $1
+      fi
 
     elif command -v zypper > /dev/null; then
       zypper -q -n install $1
@@ -53,7 +54,7 @@ function install_choice() {
 
 function prepare_install(){
     echo "1. 其他组件安装: "
-    for i in wget curl python git;do
+    for i in wget curl python git; do
         command -v $i &>/dev/null || install_choice $i
     done
 
