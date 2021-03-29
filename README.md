@@ -10,6 +10,14 @@ demo cicd by github + travis
 ## 程序说明
 
 1. 简单的web应用
-2. 部署方案使用: docker + docker-compose 部署方案
+2. 部署方案使用: `docker` / `docker-compose`
+3. `CICD`: `github` + `travis`, 生产环境考虑使用：`gitlab` + `docker` + `harbor` + `jenkins` + `ELK`
 3. 应用使用 service mesh 架构模型, 使用开源envoy组件即sidecar方式进行部署, 实现简单的流量代理,负载均衡,断融,服务发现 等功能, 
 4. docker-compose 用来重启, 暂停
+    - docker-compose restart restart
+    - docker-compose down
+    - docker-compose up --build -d 
+5. Network topology ：
+<img src="./front_proxy.svg" style="zoom:50%" />
+
+
